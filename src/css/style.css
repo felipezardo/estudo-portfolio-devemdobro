@@ -1,0 +1,241 @@
+html {
+    color: #fff;
+    scroll-behavior: smooth ;
+
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0 auto;
+    max-width: 1120px;
+    background: linear-gradient(150deg, #000000, #9e00ff);
+    background-size: 120% 120%;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+.cabecalho .logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    text-decoration: underline;
+    text-align: center;
+    line-height: 55px;
+    font-family: "Raleway", sans-serif;
+    transition: 0.2s;
+}
+
+/* hover é uma pseudo-classe,para usar uma pseudo-classe você escreve a tag que quer e hover*/
+.cabecalho a:hover .logo {
+    color: #9443d8;
+    border: 2px solid #9443d8;
+}
+
+.cabecalho .menu ul {
+    border-radius: 50px;
+
+}
+
+.cabecalho .menu li a {
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    /* capitalize deixa todas primeiras letras maiusculas, uppercase deixa todas maiusculas */
+    transition: 0.2s;
+}
+
+.cabecalho .menu li a:hover {
+    background-color: #9443d8;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.home {
+    display: flex;
+    min-height: calc(100vh - 125px);
+    /* vh é view porter height,a altura da janela que o usuário está visualizando */
+    /* funções no css são em parenteses com os valores dentro,não esquecer de colocar espaço, 125px é a altura do menu/cabecalho,verificavel se inspecionarmos*/
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.home .informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    letter-spacing: 2px;
+    padding: 0px 15px;
+    max-width: 50%;
+    /* valor percentual é uma medida relativa,que se adapta ao tamanho do dispositivo,aprender a usar medidas relativas é melhor */
+}
+
+.home .informacoes h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.home .informacoes p {
+    font-family: "Raleway", sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.home .redes-sociais {
+    display: flex;
+    gap: 20px;
+
+
+}
+
+.home .redes-sociais a i {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    font-size: 26px;
+    transition: 0.3s;
+}
+
+.home .redes-sociais a i:hover {
+    color: #9443d8;
+    border: 1px solid #9443d8;
+    transform: scale(1.1);
+}
+
+.home .container-foto .foto {
+
+    max-width: 450px;
+    border-radius: 50%;
+}
+
+.home .container-foto img {
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+.home .foto.sombra-interna {
+    background: linear-gradient(to right, #8A35C8, #18C063, #00EEA2);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+}
+
+.projetos {
+    padding: 70px 0 70px;
+}
+
+.projetos .titulo {
+    text-align: center;
+    padding: 60px 0;
+    font-size: 45px;
+    font-weight: 500px;
+    text-transform: uppercase;
+}
+
+.projetos .container-projetos {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* flex-wrap wrap funciona como uma quebra de texto,mas com os containers */
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.projetos .projeto {
+    max-width: 260px;
+    max-height: 500px;
+    position: relative;
+    /* posicionamento 'relative' significa que vai ficar relativo a div projeto */
+    display: none;
+    /* o none é para esconder os projetos que não contem a class 'ativo' */
+}
+
+.projetos .projeto.ativo {
+    display: block;
+}
+
+.projetos .projeto img {
+    height: 100%;
+}
+
+.projetos .projeto h3 {
+    background-color: #040203;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: absolute;
+    /* posicionamento 'absolute' irá funcionar junto com o 'relative' */
+    bottom: 0;
+}
+
+.projetos .projeto .informacoes-projeto {
+    background-color: #040203;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    opacity: 0;
+    transition: 0.3s;
+    padding: 20px;
+}
+
+.projetos .container-projetos .projeto:hover .informacoes-projeto {
+    opacity: 0.7;
+    background-color: #000;
+
+}
+
+.projetos .btn-mostrar-projetos {
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    width: 180px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.projetos .btn-mostrar-projetos:hover {
+    background-color: #9443d8;
+    transition: 0.3s;
+}
+
+.projetos .btn-mostrar-projetos.remover {
+    display: none;
+}
+
+.projetos .informacoes-projeto p{
+    margin-bottom: 10px;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
